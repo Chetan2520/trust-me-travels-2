@@ -53,8 +53,8 @@ export default function PopularDestinations() {
       {/* Header Area */}
       <div className="flex items-end justify-between mb-8">
         <div>
-          <p className="text-[#64748b] text-sm    mb-1 tracking-wide">Popular Train Routes in India</p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight">Popular Destinations</h2>
+          <p className="text-[#64748b] text-sm    mb-1 tracking-wide">Popular Car Routes in India</p>
+          <h2 className="text-2xl md:text-4xl font-semibold text-slate-900 tracking-tight">Popular Destinations</h2>
         </div>
         <Link href="#" className="text-sm font-medium text-slate-600 hover:text-black transition-colors px-4 py-2 border border-slate-200 rounded-full hover:bg-slate-50">
           View All
@@ -62,11 +62,11 @@ export default function PopularDestinations() {
       </div>
       
       {/* Grid of Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 md:gap-6">
         {destinations.map((dest) => (
-          <div key={dest.id} className="flex flex-col items-center group cursor-pointer">
+          <Link href={`/destinations/${dest.city.toLowerCase().replace(/\s+/g, '-')}`} key={dest.id} className="flex flex-col items-center group cursor-pointer block">
             {/* Image Card */}
-            <div className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden mb-3 shadow-md group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
+            <div className="relative w-full aspect-[4/5] rounded-xl md:rounded-3xl overflow-hidden mb-3 shadow-md group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
               <Image 
                 src={dest.image} 
                 alt={dest.city} 
@@ -81,9 +81,7 @@ export default function PopularDestinations() {
                 <p className="text-white/80 text-[10px] uppercase font-bold tracking-[0.15em] drop-shadow-sm mt-0.5">{dest.state}</p>
               </div>
             </div>
-            
-          
-          </div>
+          </Link>
         ))}
       </div>
     </section>

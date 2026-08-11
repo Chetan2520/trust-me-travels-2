@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Star } from "lucide-react";
 
 const packages = [
@@ -46,18 +47,19 @@ export default function OurPackages() {
       {/* Header Area */}
       <div className="mb-8">
         <p className="text-[#64748b] text-sm mb-1 tracking-wide uppercase font-semibold">Curated Deals</p>
-        <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight">Our Packages</h2>
+        <h2 className="text-2xl md:text-4xl font-semibold text-slate-900 tracking-tight">Our Packages</h2>
       </div>
       
       {/* Packages Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {packages.map((pkg) => (
-          <div 
+          <Link 
+            href={`/packages/${pkg.id}`}
             key={pkg.id} 
-            className="bg-white rounded-[2rem] p-3 flex flex-col  "
+            className="bg-white rounded-[2rem] p-3 flex flex-col group cursor-pointer hover:shadow-xl transition-shadow duration-300 border border-slate-100"
           >
             {/* Image (Nested inside card with padding) */}
-            <div className="relative w-full aspect-[5/3] rounded-[1.2rem] overflow-hidden mb-4">
+            <div className="relative w-full aspect-[5/3] rounded-xl md:rounded-[1.2rem] overflow-hidden mb-4">
               <Image 
                 src={pkg.image} 
                 alt={pkg.title} 
@@ -106,7 +108,7 @@ export default function OurPackages() {
               </div>
             </div>
             
-          </div>
+          </Link>
         ))}
       </div>
     </section>

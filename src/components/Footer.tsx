@@ -3,12 +3,12 @@ import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-zinc-900 text-zinc-300 w-full pt-16 pb-8 px-4 md:px-8 rounded-t-[2.5rem] mt-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-zinc-900 text-zinc-300 w-full pt-12 md:pt-16 pb-8 px-4 md:px-8 rounded-t-3xl md:rounded-t-[2.5rem] mt-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-16">
         
         {/* Brand Section */}
-        <div>
-          <h3 className="text-2xl font-bold text-white mb-6">Trust Me Travels</h3>
+        <div className="col-span-2 lg:col-span-1">
+          <img src="https://trustmetravels.in/logo2.png" alt="Trust Me Travels Logo" className="h-12 w-auto object-contain brightness-0 invert mb-6" />
           <p className="text-zinc-400 text-sm leading-relaxed mb-6">
             Your trusted partner in creating unforgettable travel experiences across India and beyond. Safety, comfort, and reliability guaranteed.
           </p>
@@ -29,10 +29,10 @@ export default function Footer() {
         <div>
           <h4 className="text-white font-semibold mb-6">Quick Links</h4>
           <ul className="space-y-4 text-sm">
-            <li><Link href="#" className="hover:text-white transition-colors">Home</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors">About Us</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors">Our Services</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors">Destinations</Link></li>
+            <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
+            <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+            <li><Link href="/gallery" className="hover:text-white transition-colors">Gallery</Link></li>
+            <li><Link href="/blogs" className="hover:text-white transition-colors">Travel Blogs</Link></li>
             <li><Link href="#" className="hover:text-white transition-colors">Tour Packages</Link></li>
           </ul>
         </div>
@@ -41,16 +41,16 @@ export default function Footer() {
         <div>
           <h4 className="text-white font-semibold mb-6">Support</h4>
           <ul className="space-y-4 text-sm">
-            <li><Link href="#" className="hover:text-white transition-colors">Contact Us</Link></li>
+            <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
             <li><Link href="#" className="hover:text-white transition-colors">FAQs</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors">Terms of Service</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors">Cancellation Policy</Link></li>
+            <li><Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+            <li><Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms of Service</Link></li>
+            <li><Link href="/refund-policy" className="hover:text-white transition-colors">Refund & Cancellation</Link></li>
           </ul>
         </div>
 
         {/* Contact Info */}
-        <div>
+        <div className="col-span-2 lg:col-span-1">
           <h4 className="text-white font-semibold mb-6">Contact Info</h4>
           <ul className="space-y-4 text-sm">
             <li className="flex items-start gap-3">

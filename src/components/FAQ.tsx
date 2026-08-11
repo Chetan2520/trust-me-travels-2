@@ -33,7 +33,7 @@ export default function FAQ() {
     <section className="w-full px-4 md:px-8 mb-32 max-w-4xl mx-auto">
       <div className="text-center mb-16">
         <p className="text-[#64748b] text-sm mb-2 tracking-[0.15em] uppercase font-bold">Got Questions?</p>
-        <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight">Frequently Asked Questions</h2>
+        <h2 className="text-2xl md:text-4xl font-semibold text-slate-900 tracking-tight">Frequently Asked Questions</h2>
       </div>
 
       <div className="flex flex-col gap-4">
