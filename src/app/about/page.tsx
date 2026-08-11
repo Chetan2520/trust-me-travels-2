@@ -214,7 +214,7 @@ function Stats() {
 function CTA() {
   return (
     <section className="py-16 px-6 md:px-12 bg-white pb-24">
-      <div className="max-w-5xl mx-auto text-center bg-slate-50 p-12 md:p-20 rounded-3xl border border-slate-100 shadow-xl relative overflow-hidden">
+      <div className="max-w-5xl mx-auto text-center bg-slate-50 p-12 md:p-20 rounded-3xl border border-slate-100   relative overflow-hidden">
         <div className="relative z-10">
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Ready To Book Your Next Ride?</h2>
           <p className="text-slate-600 mb-10 max-w-2xl mx-auto text-lg">

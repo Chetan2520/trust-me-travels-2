@@ -44,7 +44,7 @@ export default function OurServices() {
               className="bg-[#f8fafc] p-6 rounded-[1.5rem]   transition-all duration-300 flex flex-col group cursor-pointer"
             >
               <div className="mb-5 transition-transform duration-300 group-hover:scale-110 origin-left">
-                <Icon className="w-8 h-8 text-[#2563eb]" strokeWidth={1.5} />
+                <Icon className="w-8 h-8 text-[#20a8d9]" strokeWidth={1.5} />
               </div>
               
               <h3 className="text-[17px] font-bold text-slate-900 mb-3">{service.title}</h3>

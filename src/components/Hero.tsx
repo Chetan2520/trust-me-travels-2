@@ -303,7 +303,7 @@ export default function Hero() {
                 )}
 
                 {/* Common Search Button */}
-                <button className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white rounded-full px-10 h-12 xl:h-14 flex items-center justify-center shrink-0 transition-colors font-bold text-[15px] xl:w-auto w-full xl:ml-1 mt-1 xl:mt-0">
+                <button className="bg-[#20a8d9] hover:bg-[#1d4ed8] text-white rounded-full px-10 h-12 xl:h-14 flex items-center justify-center shrink-0 transition-colors font-bold text-[15px] xl:w-auto w-full xl:ml-1 mt-1 xl:mt-0">
                   Explore
                 </button>
                   

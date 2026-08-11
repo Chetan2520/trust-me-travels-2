@@ -83,7 +83,7 @@ export default function DestinationPage({ params }: { params: Promise<{ city: st
                 <option>10:00 AM</option>
               </select>
             </div>
-            <button className="bg-white border border-[#2563EB] text-[#2563EB] hover:bg-blue-50 font-semibold py-2 px-6 rounded-full transition-colors text-sm shadow-sm whitespace-nowrap">
+            <button className="bg-white border border-[#20a8d9] text-[#20a8d9] hover:bg-blue-50 font-semibold py-2 px-6 rounded-full transition-colors text-sm shadow-sm whitespace-nowrap">
               Modify Booking
             </button>
           </div>
@@ -159,7 +159,7 @@ export default function DestinationPage({ params }: { params: Promise<{ city: st
                       Top Rated
                     </div>
                   </div>
-                  <button className="bg-[#2563EB] hover:bg-blue-700 text-white font-bold py-2.5 px-8 rounded-full transition-all duration-300 shadow-sm text-sm">
+                  <button className="bg-[#20a8d9] hover:bg-blue-700 text-white font-bold py-2.5 px-8 rounded-full transition-all duration-300 shadow-sm text-sm">
                     Select
                   </button>
                 </div>
