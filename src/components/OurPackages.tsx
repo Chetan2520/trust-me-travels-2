@@ -10,7 +10,7 @@ const packages = [
     rating: 9.8,
     reviews: "4.5k",
     price: "12,500",
-    image: "/kedarnath.jpg"
+    image: "/kedarnath-package.png"
   },
   {
     id: 2,
@@ -19,25 +19,25 @@ const packages = [
     rating: 9.6,
     reviews: "8.2k",
     price: "8,200",
-    image: "https://images.unsplash.com/photo-1646288744226-a2e3a06bfb10?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8a2FzaGl8ZW58MHx8MHx8fDA%3D"
+    image: "/kashi.png"
   },
   {
     id: 3,
-    title: "Tirupati Balaji Darshan",
-    location: "Tirumala, Andhra Pradesh, India",
-    rating: 9.9,
-    reviews: "12k",
-    price: "5,500",
-    image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=800"
+   title: "Mahabaleshwar Trip",
+  location: "Mahabaleshwar, Maharashtra, India",
+  rating: 9.9,
+  reviews: "12k",
+  price: "5,500",
+    image: "/mahabaleshwar-package.png"
   },
   {
     id: 4,
-    title: "Vaishno Devi Yatra",
-    location: "Katra, Jammu & Kashmir, India",
+    title: "Lonavala Trip",
+    location: "Lonavala, Maharashtra, India",
     rating: 9.7,
     reviews: "15k",
     price: "6,800",
-    image: "https://images.unsplash.com/photo-1717502713522-543a97e13dab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmFpc2hubyUyMGRldml8ZW58MHx8MHx8fDA%3D"
+    image: "/lonavala.png"
   } 
 ];
 
@@ -46,7 +46,7 @@ export default function OurPackages() {
     <section className="w-full px-4 md:px-8 mb-24">
       {/* Header Area */}
       <div className="mb-8">
-        <p className="text-[#64748b] text-sm mb-1 tracking-wide uppercase font-semibold">Curated Deals</p>
+        <p className="text-[#64748b] text-sm mb-1 tracking-wide  font-semibold">Curated Deals</p>
         <h2 className="text-2xl md:text-4xl font-semibold text-slate-900 tracking-tight">Our Packages</h2>
       </div>
       
@@ -56,7 +56,7 @@ export default function OurPackages() {
           <Link 
             href={`/packages/${pkg.id}`}
             key={pkg.id} 
-            className="bg-white rounded-[2rem] p-3 flex flex-col group cursor-pointer hover:shadow-xl transition-shadow duration-300 border border-slate-100"
+            className="bg-white rounded-[2rem] p-3 flex flex-col group cursor-pointer  "
           >
             {/* Image (Nested inside card with padding) */}
             <div className="relative w-full aspect-[5/3] rounded-xl md:rounded-[1.2rem] overflow-hidden mb-4">
