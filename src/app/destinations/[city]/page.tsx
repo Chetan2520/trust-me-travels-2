@@ -4,7 +4,7 @@ import { useState, use } from "react";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Users, Briefcase, Settings, Star, ChevronDown, ChevronRight, Calendar as CalendarIcon, Clock as ClockIcon, IndianRupee, Ban, Headset } from "lucide-react";
+import { Users, Briefcase, Settings, Star, ChevronDown, ChevronRight, Calendar as CalendarIcon, Clock as ClockIcon, IndianRupee, Ban, Headset, IndianRupeeIcon } from "lucide-react";
 
 export default function DestinationPage({ params }: { params: Promise<{ city: string }> }) {
   const resolvedParams = use(params);
@@ -29,93 +29,94 @@ export default function DestinationPage({ params }: { params: Promise<{ city: st
       {/* Search Results Header (Exact match to image) */}
       <div className="w-full bg-[#F3FAFC] pt-6 pb-6 px-4 md:px-12 border-b border-blue-100">
         <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div>
+          <div className="w-full md:w-[600px] lg:w-[700px]">
             <div className="text-[11px] text-slate-500 mb-2 flex items-center gap-1 font-medium">Home <ChevronRight className="w-3 h-3" /> Select Car</div>
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-3">
-              <div className="flex items-center bg-white rounded-full px-4 py-2.5 shadow-sm border border-slate-200 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100 transition-all group">
-                <div className="w-2 h-2 rounded-full bg-green-500 mr-3"></div>
+            <div className="flex flex-col md:flex-row items-center gap-3 w-full">
+              <div className="flex-1 flex items-center bg-white rounded-full px-5 py-3 transition-all w-full">
                 <input 
                   type="text" 
                   placeholder="Enter Pickup City" 
                   value={fromLocation}
                   onChange={(e) => setFromLocation(e.target.value)}
-                  className="bg-transparent border-none focus:outline-none placeholder:text-slate-400 text-slate-900 font-bold w-[180px] md:w-[220px] text-sm md:text-[15px]"
+                  className="bg-transparent border-none focus:outline-none placeholder:text-slate-400 text-slate-900    w-full text-sm md:text-[15px]"
                 />
               </div>
               
-              <div className="hidden md:flex items-center justify-center text-slate-400">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div className="hidden md:flex items-center justify-center text-slate-400 shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
               
-              <div className="flex items-center bg-white/60 rounded-full px-4 py-2.5 shadow-sm border border-slate-200/60 w-[180px] md:w-[220px]">
-                <div className="w-2 h-2 rounded-full bg-red-500 mr-3"></div>
-                <span className="font-bold text-slate-900 text-sm md:text-[15px]">{cityName}</span>
+              <div className="flex-1 flex items-center bg-white rounded-full px-5 py-3 w-full">
+                <span className="    text-slate-900 text-sm md:text-[15px] truncate">{cityName}</span>
               </div>
             </div>
           </div>
           
-          <div className="flex flex-wrap items-center gap-8 md:gap-16">
-            <div className="flex flex-col">
-              <span className="text-[10px] text-slate-500 font-bold uppercase mb-0.5">Trip Type</span>
-              <span className="font-bold text-slate-900 text-sm">One way</span>
+          <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-16 w-full md:w-auto mt-2 md:mt-0">
+            <div className="flex items-center justify-between md:justify-start gap-8 md:gap-16">
+              <div className="flex flex-col">
+                <span className="text-[10px] text-slate-500 font-bold uppercase mb-0.5">Trip Type</span>
+                <span className="font-bold text-slate-900 text-sm">One way</span>
+              </div>
+              <div className="flex flex-col relative group">
+                <span className="text-[10px] text-slate-500 font-bold uppercase mb-0.5">Pick up</span>
+                <div className="flex items-center gap-4">
+                  <span className="font-bold text-slate-900 text-sm">11-08-2026</span>
+                  <CalendarIcon className="w-4 h-4 text-slate-700" />
+                </div>
+              </div>
             </div>
-            <div className="flex flex-col relative group">
-              <span className="text-[10px] text-slate-500 font-bold uppercase mb-0.5">Pick up</span>
-              <input 
-                type="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-                className="font-bold text-slate-900 text-sm bg-transparent border-none focus:outline-none p-0 cursor-pointer"
-              />
+            
+            <div className="flex items-center justify-between md:justify-start gap-8 md:gap-16 mt-2 md:mt-0">
+              <div className="flex flex-col relative group">
+                <span className="text-[10px] text-slate-500 font-bold uppercase mb-0.5">Time</span>
+                <select 
+                  value={time}
+                  onChange={(e) => setTime(e.target.value)}
+                  className="font-bold text-slate-900 text-sm bg-transparent border-none focus:outline-none p-0 appearance-none cursor-pointer"
+                >
+                  <option>07:00 AM</option>
+                  <option>08:00 AM</option>
+                  <option>09:00 AM</option>
+                  <option>10:00 AM</option>
+                </select>
+              </div>
+              <button className="bg-white border border-[#20a8d9] text-[#20a8d9] hover:bg-blue-50 font-semibold py-2 px-6 rounded-full transition-colors text-sm shadow-sm whitespace-nowrap">
+                Modify Booking
+              </button>
             </div>
-            <div className="flex flex-col relative group">
-              <span className="text-[10px] text-slate-500 font-bold uppercase mb-0.5">Time</span>
-              <select 
-                value={time}
-                onChange={(e) => setTime(e.target.value)}
-                className="font-bold text-slate-900 text-sm bg-transparent border-none focus:outline-none p-0 appearance-none cursor-pointer"
-              >
-                <option>07:00 AM</option>
-                <option>08:00 AM</option>
-                <option>09:00 AM</option>
-                <option>10:00 AM</option>
-              </select>
-            </div>
-            <button className="bg-white border border-[#20a8d9] text-[#20a8d9] hover:bg-blue-50 font-semibold py-2 px-6 rounded-full transition-colors text-sm shadow-sm whitespace-nowrap">
-              Modify Booking
-            </button>
           </div>
         </div>
       </div>
 
       <section className="max-w-[1400px] mx-auto px-4 md:px-12 pt-6 pb-20">
         {/* Blue Banner */}
-        <div className="bg-[#1D79B3] rounded-lg p-3 md:p-4 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-24 text-white w-full mb-8 shadow-sm">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 border-2 border-white rounded-full flex items-center justify-center font-bold text-xl">
-              ₹
+        <div className="bg-[#1D79B3] rounded-xl p-6 md:p-4 flex flex-col items-center justify-center w-full mb-8 shadow-sm">
+          <div className="flex flex-col md:flex-row gap-6 md:gap-24 w-fit">
+            <div className="flex items-center gap-4">
+               <IndianRupeeIcon className="w-10 h-10 text-white shrink-0" strokeWidth={1.5} />
+              <div className="flex flex-col leading-tight">
+                <span className="font-bold text-[15px] text-white">Book Now</span>
+                <span className="text-[12px] text-white/90 font-medium">at Zero Cost</span>
+              </div>
             </div>
-            <div className="flex flex-col leading-tight">
-              <span className="font-bold text-[14px]">Book Now</span>
-              <span className="text-[11px] text-white font-medium">at Zero Cost</span>
+            
+            <div className="flex items-center gap-4">
+              <Ban className="w-10 h-10 text-white shrink-0" strokeWidth={1.5} />
+              <div className="flex flex-col leading-tight">
+                <span className="font-bold text-[15px] text-white">Free Cancellations</span>
+                <span className="text-[12px] text-white/90 font-medium">Upto 1 Hour</span>
+              </div>
             </div>
-          </div>
-          
-          <div className="flex items-center gap-3">
-            <Ban className="w-10 h-10 text-white" strokeWidth={1.5} />
-            <div className="flex flex-col leading-tight">
-              <span className="font-bold text-[14px]">Free Cancellations</span>
-              <span className="text-[11px] text-white font-medium">Upto 1 Hour</span>
-            </div>
-          </div>
-          
-          <div className="flex items-center gap-3">
-            <Headset className="w-10 h-10 text-white" strokeWidth={1.5} />
-            <div className="flex flex-col leading-tight">
-              <span className="font-bold text-[14px]">24x7 Customer</span>
-              <span className="text-[11px] text-white font-medium">Support</span>
+            
+            <div className="flex items-center gap-4">
+              <Headset className="w-10 h-10 text-white shrink-0" strokeWidth={1.5} />
+              <div className="flex flex-col leading-tight">
+                <span className="font-bold text-[15px] text-white">24x7 Customer</span>
+                <span className="text-[12px] text-white/90 font-medium">Support</span>
+              </div>
             </div>
           </div>
         </div>
@@ -123,13 +124,13 @@ export default function DestinationPage({ params }: { params: Promise<{ city: st
         {/* Car List */}
         <div className="grid grid-cols-1 gap-6 w-full">
           {cars.map((car) => (
-            <div key={car.id} className="bg-white rounded-2xl p-5 md:p-6 border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col md:flex-row gap-8 items-center">
+            <div key={car.id} className="bg-white rounded-2xl p-5 md:p-6   flex flex-col md:flex-row gap-8 items-center">
               
               <div className="w-full md:w-[260px] aspect-[16/9] md:aspect-auto md:h-[160px] bg-slate-50 rounded-2xl relative shrink-0 flex items-center justify-center overflow-hidden mix-blend-multiply">
                  {car.name.includes('SUV') ? (
-                   <Image sizes="(max-width: 768px) 100vw, 300px" src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&auto=format&fit=crop&q=80" fill className="object-cover" alt={car.name} />
+                   <Image sizes="(max-width: 768px) 100vw, 300px" src="https://trustmetravels.in/bmw.png" fill className="object-cover" alt={car.name} />
                  ) : (
-                   <Image sizes="(max-width: 768px) 100vw, 300px" src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&auto=format&fit=crop&q=80" fill className="object-cover" alt={car.name} />
+                   <Image sizes="(max-width: 768px) 100vw, 300px" src="https://trustmetravels.in/audi.png" fill className="object-cover" alt={car.name} />
                  )}
               </div>
               

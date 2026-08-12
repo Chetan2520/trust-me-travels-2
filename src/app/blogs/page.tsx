@@ -36,51 +36,10 @@ function PageHeader() {
   );
 }
 
+import { blogsData } from "@/data/blogs";
+
 function BlogsGrid() {
-  const blogs = [
-    {
-      title: "Top 10 Hidden Gems to Visit in India",
-      excerpt: "Discover the unexplored beauty of India with our top 10 hidden travel destinations that you must visit this year.",
-      date: "August 12, 2026",
-      category: "Destinations",
-      img: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1000&auto=format&fit=crop"
-    },
-    {
-      title: "How to Pack Light for a Weekend Getaway",
-      excerpt: "Struggling to pack for a short trip? Here are the ultimate tips for traveling light without missing the essentials.",
-      date: "July 28, 2026",
-      category: "Travel Tips",
-      img: "https://images.unsplash.com/photo-1544256718-3bcf237f3974?q=80&w=1000&auto=format&fit=crop"
-    },
-    {
-      title: "Why Cab Rentals are Better Than Self-Drive",
-      excerpt: "When planning a road trip, renting a cab with a professional driver has massive benefits over driving yourself.",
-      date: "July 15, 2026",
-      category: "Services",
-      img: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1000&auto=format&fit=crop"
-    },
-    {
-      title: "A Guide to Safe Travel During Monsoons",
-      excerpt: "Monsoons make destinations beautiful, but they come with risks. Read our guide to stay safe and enjoy the rains.",
-      date: "June 30, 2026",
-      category: "Guides",
-      img: "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?q=80&w=1000&auto=format&fit=crop"
-    },
-    {
-      title: "5 Reasons to Visit Rajasthan This Winter",
-      excerpt: "From majestic forts to desert safaris, find out why Rajasthan is the ultimate winter travel destination.",
-      date: "June 12, 2026",
-      category: "Destinations",
-      img: "https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=1000&auto=format&fit=crop"
-    },
-    {
-      title: "Understanding Airline Baggage Allowances",
-      excerpt: "Don't pay extra fees! A comprehensive breakdown of what you can and cannot carry on domestic flights.",
-      date: "May 25, 2026",
-      category: "Flights",
-      img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1000&auto=format&fit=crop"
-    }
-  ];
+  const blogs = blogsData;
 
   return (
     <section className="py-20 px-6 md:px-12 bg-slate-50">
@@ -88,7 +47,7 @@ function BlogsGrid() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogs.map((blog, idx) => (
             <div key={idx} className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-100 flex flex-col h-full group">
-              <div className="relative h-60 w-full overflow-hidden">
+              <Link href={`/blogs/${blog.slug}`} className="relative h-60 w-full overflow-hidden block">
                 <Image
                   src={blog.img}
                   alt={blog.title}
@@ -98,16 +57,18 @@ function BlogsGrid() {
                 <div className="absolute top-4 left-4 bg-blue-700 text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded">
                   {blog.category}
                 </div>
-              </div>
+              </Link>
               <div className="p-6 flex flex-col flex-grow">
                 <p className="text-sm text-slate-500 mb-2">{blog.date}</p>
-                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors">
-                  {blog.title}
-                </h3>
+                <Link href={`/blogs/${blog.slug}`}>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors">
+                    {blog.title}
+                  </h3>
+                </Link>
                 <p className="text-slate-600 mb-6 flex-grow text-sm leading-relaxed">
                   {blog.excerpt}
                 </p>
-                <Link href="#" className="inline-flex items-center gap-2 text-blue-700 font-medium hover:text-blue-800">
+                <Link href={`/blogs/${blog.slug}`} className="inline-flex items-center gap-2 text-blue-700 font-medium hover:text-blue-800">
                   Read More <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
